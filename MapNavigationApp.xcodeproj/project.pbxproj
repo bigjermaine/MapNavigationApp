@@ -12,12 +12,9 @@
 		D006ED9A2C39D5E900B7E388 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D006ED992C39D5E900B7E388 /* ViewController.swift */; };
 		D006ED9F2C39D5EC00B7E388 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D006ED9E2C39D5EC00B7E388 /* Assets.xcassets */; };
 		D006EDA22C39D5EC00B7E388 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D006EDA02C39D5EC00B7E388 /* LaunchScreen.storyboard */; };
-		EED6F3ECBD113006070C1816 /* Pods_MapNavigationApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814D17F5C709F82691A655FE /* Pods_MapNavigationApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2CA0160D74A010ADA197EFBB /* Pods-MapNavigationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapNavigationApp.debug.xcconfig"; path = "Target Support Files/Pods-MapNavigationApp/Pods-MapNavigationApp.debug.xcconfig"; sourceTree = "<group>"; };
-		814D17F5C709F82691A655FE /* Pods_MapNavigationApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapNavigationApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D006ED922C39D5E900B7E388 /* MapNavigationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapNavigationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D006ED952C39D5E900B7E388 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D006ED972C39D5E900B7E388 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +22,6 @@
 		D006ED9E2C39D5EC00B7E388 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D006EDA12C39D5EC00B7E388 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D006EDA32C39D5EC00B7E388 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F374501505A04C30755BA126 /* Pods-MapNavigationApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapNavigationApp.release.xcconfig"; path = "Target Support Files/Pods-MapNavigationApp/Pods-MapNavigationApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,37 +29,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EED6F3ECBD113006070C1816 /* Pods_MapNavigationApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2547C5080C2A3BCACD33EB2B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				814D17F5C709F82691A655FE /* Pods_MapNavigationApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A7A73566D9AC7DD8376E6F51 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2CA0160D74A010ADA197EFBB /* Pods-MapNavigationApp.debug.xcconfig */,
-				F374501505A04C30755BA126 /* Pods-MapNavigationApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		D006ED892C39D5E900B7E388 = {
 			isa = PBXGroup;
 			children = (
 				D006ED942C39D5E900B7E388 /* MapNavigationApp */,
 				D006ED932C39D5E900B7E388 /* Products */,
-				A7A73566D9AC7DD8376E6F51 /* Pods */,
-				2547C5080C2A3BCACD33EB2B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,11 +79,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D006EDA62C39D5EC00B7E388 /* Build configuration list for PBXNativeTarget "MapNavigationApp" */;
 			buildPhases = (
-				0D2C34DAE0E433D71FCF06D3 /* [CP] Check Pods Manifest.lock */,
 				D006ED8E2C39D5E900B7E388 /* Sources */,
 				D006ED8F2C39D5E900B7E388 /* Frameworks */,
 				D006ED902C39D5E900B7E388 /* Resources */,
-				F8AF29A8FEF85B4E45A01CED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,48 +136,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0D2C34DAE0E433D71FCF06D3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MapNavigationApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F8AF29A8FEF85B4E45A01CED /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MapNavigationApp/Pods-MapNavigationApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MapNavigationApp/Pods-MapNavigationApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MapNavigationApp/Pods-MapNavigationApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D006ED8E2C39D5E900B7E388 /* Sources */ = {
@@ -351,7 +283,6 @@
 		};
 		D006EDA72C39D5EC00B7E388 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CA0160D74A010ADA197EFBB /* Pods-MapNavigationApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,7 +313,6 @@
 		};
 		D006EDA82C39D5EC00B7E388 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F374501505A04C30755BA126 /* Pods-MapNavigationApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Layoutless
 import MapKit
 import CoreLocation
 import AVFoundation
@@ -19,7 +18,7 @@ class ViewController: UIViewController {
     var route:MKRoute?
     var showMapRoute = false
     var naigationStarted = false
-    let locariondistance:Double = 500
+    let locationDistance:Double = 500
     var speechSynthesizer = AVSpeechSynthesizer()
     
     lazy var locationManager:CLLocationManager =  {
@@ -48,8 +47,8 @@ class ViewController: UIViewController {
         let label = UILabel()
         button.titleLabel?.font = label.font
         button.setTitle("Next", for: .normal)
+        button.setTitleColor(.systemGreen, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 4
         button.layer.masksToBounds = true
         return button
@@ -71,6 +70,9 @@ class ViewController: UIViewController {
     
     lazy var mapView:MKMapView =  {
         let mapView = MKMapView()
+        mapView.delegate = self
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        mapView.showsUserLocation = true
         return mapView
         
     }()
@@ -80,6 +82,7 @@ class ViewController: UIViewController {
         addSubviews()
         configureConstraints()
         locationManager.startUpdatingLocation()
+        view.backgroundColor = .white
     }
     
     
@@ -87,6 +90,7 @@ class ViewController: UIViewController {
         view.addSubview(directionalLabel)
         view.addSubview(nextButton)
         view.addSubview(entryField)
+        view.addSubview(mapView)
     }
     private func configureConstraints() {
         // Directional Label constraints
@@ -140,13 +144,33 @@ extension ViewController:CLLocationManagerDelegate {
         case .authorizedWhenInUse:
             locationManager.requestWhenInUseAuthorization()
         case .authorized:
-            centerUserLocation(center: <#T##CLLocationCoordinate2D#>)
+            if  let center = locationManager.location?.coordinate {
+                centerUserLocation(center:center )
+            }
         @unknown default:
             break
         }
     }
     
     private func centerUserLocation(center:CLLocationCoordinate2D) {
+       let region  = MKCoordinateRegion(center: center, latitudinalMeters: locationDistance, longitudinalMeters: locationDistance)
+        mapView.setRegion(region, animated: true)
         
     }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if !showMapRoute {
+            if let location = locations.last {
+                let center = location.coordinate
+                centerUserLocation(center: center)
+            }
+        }
+    }
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        handleAuthorizationStatus(locationManager: locationManager, status: manager.authorizationStatus)
+    }
+}
+
+extension ViewController:MKMapViewDelegate {
+    
 }

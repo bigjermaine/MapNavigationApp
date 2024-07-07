@@ -1,6 +1,0 @@
-framework module Layoutless {
-  umbrella header "Layoutless-umbrella.h"
-
-  export *
-  module * { export * }
-}
