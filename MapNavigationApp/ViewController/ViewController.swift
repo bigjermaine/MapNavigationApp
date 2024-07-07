@@ -47,9 +47,10 @@ class ViewController: UIViewController {
         let label = UILabel()
         button.titleLabel?.font = label.font
         button.setTitle("Next", for: .normal)
-        button.setTitleColor(.systemGreen, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 4
+        button.backgroundColor = .systemPurple
         button.layer.masksToBounds = true
         return button
     }()
@@ -85,7 +86,23 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
     }
     
+      func configureActions() {
+        nextButton.addTarget(self, action: #selector(didNextButtonTapped), for: .touchUpInside)
+    }
     
+    @objc func didNextButtonTapped() {
+        guard let text = entryField.text else {return}
+        showMapRoute = true
+        entryField.endEditing(true)
+        
+        let geoCorder = CLGeocoder()
+        geoCorder.geocodeAddressString(text) { (PlaceMark, error) in
+            if let error = error {
+                
+            }
+        }
+        
+    }
     private func addSubviews() {
         view.addSubview(directionalLabel)
         view.addSubview(nextButton)
@@ -98,8 +115,6 @@ class ViewController: UIViewController {
             directionalLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             directionalLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             directionalLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
-            // Add height constraint if needed, e.g.,
-            // directionalLabel.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         // Next Button constraints
